@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "./";
+
+message CreateCategoryRequest {
+  string Name = 1;
+  string Title = 2;
+  string Description = 3;
+  string Tags = 4;
+  string Image = 5;
+}
+
+message CreateCategoryResponse {
+  int32 ID = 1;
+  string Name = 2;
+  string Title = 3;
+  string Description = 4;
+  string Tags = 5;
+  string Image = 6;
+}
+
+service CategoryService {
+  rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse);
+}
